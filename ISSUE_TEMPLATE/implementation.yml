@@ -1,0 +1,28 @@
+name: Implementation linked to Linear
+description: GitHub-side implementation record for work already registered in Linear.
+title: "[SOD-___] "
+labels: []
+body:
+  - type: input
+    id: linear
+    attributes:
+      label: Linear issue
+      description: Existing owning Linear issue, for example SOD-123.
+      placeholder: SOD-123
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and negative scope
+      description: State what changes and what explicitly does not.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Acceptance and verification contract
+      description: Include commands, runtime path, evidence level, failure path, and rollback.
+    validations:
+      required: true
+

@@ -1,0 +1,27 @@
+name: Linear traceability
+
+on:
+  workflow_call:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Linear contract
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out policy repository
+        uses: actions/checkout@v4
+        with:
+          repository: Namaka-Inc/.github
+          ref: main
+      - name: Validate pull request metadata
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: scripts/validate-linear-traceability.sh
+

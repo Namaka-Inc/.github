@@ -4,6 +4,8 @@ on:
   workflow_call:
   pull_request:
     types: [opened, edited, synchronize, reopened]
+  push:
+    branches-ignore: [main]
 
 permissions:
   contents: read
@@ -19,9 +21,11 @@ jobs:
           repository: Namaka-Inc/.github
           ref: main
       - name: Validate pull request metadata
+        if: github.event_name == 'pull_request'
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
           PR_BRANCH: ${{ github.event.pull_request.head.ref }}
         run: scripts/validate-linear-traceability.sh
-
+      - name: Test conforming and non-conforming fixtures
+        run: scripts/test-linear-traceability.sh

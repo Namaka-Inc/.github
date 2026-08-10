@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "organization": "Namaka-Inc",
+  "observed_at": "2026-08-10T12:46:00Z",
+  "required_check": "Validate Linear contract",
+  "repositories": [
+    { "name": ".github", "visibility": "public", "default_branch": "main", "enforcement": "not_configured" },
+    { "name": "axiom-core", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
+    { "name": "demo-repository", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
+    { "name": "namakaos-reference-slice", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
+    { "name": "novainvest", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
+    { "name": "novaviz", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" }
+  ],
+  "blocker": {
+    "github_response": "Upgrade to GitHub Pro or make this repository public to enable this feature.",
+    "forbidden_fallbacks": ["make_private_repository_public_without_authority", "claim_template_as_merge_enforcement"]
+  }
+}

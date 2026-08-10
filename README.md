@@ -35,3 +35,6 @@ hard-enforced only after the validator is installed and configured as a required
 check on its protected default branch. Rollout is tracked in Linear issue
 `SOD-559`.
 
+The observed repository-by-repository rollout state is recorded in
+[`repository-inventory.json`](repository-inventory.json). A blocked protection
+API is reported as blocked, never as enforcement.

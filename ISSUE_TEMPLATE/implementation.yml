@@ -11,6 +11,14 @@ body:
       placeholder: SOD-123
     validations:
       required: true
+  - type: input
+    id: linear_url
+    attributes:
+      label: Linear issue URL
+      description: Direct URL to the same owning Linear issue for bidirectional traceability.
+      placeholder: https://linear.app/sodersten-space/issue/SOD-123/...
+    validations:
+      required: true
   - type: textarea
     id: scope
     attributes:
@@ -25,4 +33,3 @@ body:
       description: Include commands, runtime path, evidence level, failure path, and rollback.
     validations:
       required: true
-

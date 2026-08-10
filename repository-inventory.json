@@ -1,18 +1,19 @@
 {
   "schema_version": "1.0.0",
   "organization": "Namaka-Inc",
-  "observed_at": "2026-08-10T12:49:00Z",
+  "observed_at": "2026-08-10T13:25:00Z",
   "required_check": "Validate Linear contract",
   "repositories": [
     { "name": ".github", "visibility": "public", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "context": "Validate Linear contract", "strict": true, "enforce_admins": true } },
-    { "name": "axiom-core", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
-    { "name": "demo-repository", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
-    { "name": "namakaos-reference-slice", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
-    { "name": "novainvest", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
-    { "name": "novaviz", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" }
+    { "name": "axiom-core", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 59, "contexts": ["validate", "Validate Linear contract / Validate Linear contract"] } },
+    { "name": "demo-repository", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "negative_pull_request": 3, "positive_pull_request": 4, "contexts": ["build", "Validate Linear contract / Validate Linear contract"] } },
+    { "name": "namakaos-reference-slice", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 6, "contexts": ["Validate Linear contract / Validate Linear contract"] } },
+    { "name": "novainvest", "visibility": "private", "default_branch": "main", "enforcement": "pending_signed_intent", "evidence": { "pull_request": 38, "traceability_check": "pass", "axiom_validate": "halt_intent_scope_mismatch" } },
+    { "name": "novaviz", "visibility": "private", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "pull_request": 2, "contexts": ["Validate Linear contract / Validate Linear contract"] } }
   ],
   "blocker": {
-    "github_response": "Upgrade to GitHub Pro or make this repository public to enable this feature.",
-    "forbidden_fallbacks": ["make_private_repository_public_without_authority", "claim_template_as_merge_enforcement"]
+    "github_response": null,
+    "current_blocker": "NovaInvest requires a SOD-559 intent signed by its existing trusted owner key before PR 38 can merge.",
+    "forbidden_fallbacks": ["bypass_signed_intent", "replace_trusted_signer_without_authority", "claim_partial_rollout_as_global_enforcement"]
   }
 }

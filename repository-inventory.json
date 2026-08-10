@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "organization": "Namaka-Inc",
-  "observed_at": "2026-08-10T12:46:00Z",
+  "observed_at": "2026-08-10T12:49:00Z",
   "required_check": "Validate Linear contract",
   "repositories": [
-    { "name": ".github", "visibility": "public", "default_branch": "main", "enforcement": "not_configured" },
+    { "name": ".github", "visibility": "public", "default_branch": "main", "enforcement": "required_check_observed", "evidence": { "context": "Validate Linear contract", "strict": true, "enforce_admins": true } },
     { "name": "axiom-core", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
     { "name": "demo-repository", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
     { "name": "namakaos-reference-slice", "visibility": "private", "default_branch": "main", "enforcement": "blocked_by_github_plan" },
